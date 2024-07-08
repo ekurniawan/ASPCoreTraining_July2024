@@ -6,7 +6,16 @@ namespace ASPCoreTraining.Web.Controllers
     {
         public IActionResult Index()
         {
-            return Content("Hello from Home Controller");
+            //ViewData["username"] = "ekurniawan";
+            ViewBag.username = "ekurniawan";
+
+            List<string> users = new List<string>();
+            users.Add("ekurniawan");
+            users.Add("johndoe");
+            users.Add("janedoe");
+            ViewBag.users = users;
+
+            return View();
         }
 
         public IActionResult About()
