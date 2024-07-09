@@ -9,6 +9,7 @@ namespace ASPCoreTraining.Domain
     public class Employee
     {
         public int EmployeeId { get; set; }
+        public string EmployeeIdMasking { get; set; } = null!;
         public string FullName { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string Department { get; set; } = null!;

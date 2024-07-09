@@ -1,0 +1,83 @@
+﻿@model IEnumerable<ASPCoreTraining.Domain.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid px-4">
+    <div class="card">
+        <div class="card-header text-teal ">Hi, Adi Priono</div>
+        <div class="card-body">
+
+            <div class="row gx-3 ">
+
+                <!-- Section Header -->
+                <div class="col-md-12 mb-3">
+                    <div class="mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <a class="btn btn-success btn-xs" asp-action="Create">Create New</a>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.EmployeeId)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.FullName)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Email)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Department)
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EmployeeId)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.FullName)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Email)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Department)
+                                                </td>
+                                                <td>
+                                                    <a asp-action="Edit" class="btn btn-warning btn-xs" asp-route-id="@item.EmployeeId">Edit</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             
+                <!-- Section 2 -->
+                <!-- Section 3 -->
+                <!-- Section Button -->
+                @*  <div class="col-md-4 mb-3">
+                <div class="mb-3">
+                <!-- Save changes button-->
+
+                </div>
+                </div> *@
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

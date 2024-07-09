@@ -1,6 +1,7 @@
 ﻿
 using ASPCoreTraining.Data.Interfaces;
 using ASPCoreTraining.Domain;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,11 +15,41 @@ namespace ASPCoreTraining.Data
 {
     public class EmployeeDAL : IEmployeeDAL
     {
-        private string _connectionString = @"Data Source=ACTUAL;Initial Catalog=KangeanDb;Integrated Security=True;TrustServerCertificate=True";
+        private string _connectionString = string.Empty;
+        public EmployeeDAL(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
 
         public Employee Add(Employee entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                var strSql = @"INSERT INTO Employees (EmployeeIdMasking,FullName, Email, Department) 
+                               VALUES (@EmployeeIdMasking, @FullName, @Email, @Department);
+                               select @@identity";
+
+                using (SqlCommand cmd = new SqlCommand(strSql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@EmployeeIdMasking", entity.EmployeeIdMasking);
+                    cmd.Parameters.AddWithValue("@FullName", entity.FullName);
+                    cmd.Parameters.AddWithValue("@Email", entity.Email);
+                    cmd.Parameters.AddWithValue("@Department", entity.Department);
+
+                    conn.Open();
+
+                    try
+                    {
+                        var newId = cmd.ExecuteScalar();
+                        entity.EmployeeId = Convert.ToInt32(newId);
+                        return entity;
+                    }
+                    catch (SqlException sqlEx)
+                    {
+                        throw new ArgumentException($"Number: {sqlEx.Number} - Error:{sqlEx.Message}");
+                    }
+                }
+            }
         }
 
         public void Delete(int id)

@@ -16,7 +16,7 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         public ActionResult Index()
         {
             var results = _employeeDAL.GetAll();
-            return new JsonResult(results);
+            return View(results);
         }
 
         // GET: EmployeesController/Details/5
