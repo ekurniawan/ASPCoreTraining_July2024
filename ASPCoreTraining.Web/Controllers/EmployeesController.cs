@@ -64,5 +64,20 @@ namespace ASPCoreTraining.Web.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var employee = _employee.GetEmployeeById(id);
+            return View(employee);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Employee employee)
+        {
+            _employee.DeleteEmployee(employee.EmployeeId);
+            TempData["Message"] = "Employee deleted successfully";
+
+            return RedirectToAction("Index");
+        }
     }
 }

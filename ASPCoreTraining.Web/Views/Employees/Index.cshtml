@@ -24,6 +24,7 @@
                 <th>Department</th>
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
+                <th>&nbsp;</th>
             </tr>
             @foreach(var employee in Model)
             {
@@ -34,7 +35,8 @@
                     <td>@employee.Email</td>
                     <td>@employee.Department</td>
                     <td><a href="/Employees/Details/@employee.EmployeeId">detail</a></td>
-                <td><a href="/Employees/Edit/@employee.EmployeeId">update</a></td>
+                    <td><a href="/Employees/Edit/@employee.EmployeeId">update</a></td>
+                    <td><a asp-action="Delete" asp-route-id="@employee.EmployeeId">delete</a></td>
                 </tr>
             }
         </table>

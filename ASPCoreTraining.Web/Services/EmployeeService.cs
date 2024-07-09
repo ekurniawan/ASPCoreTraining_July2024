@@ -18,7 +18,12 @@ namespace ASPCoreTraining.Web.Services
 
         public void DeleteEmployee(int id)
         {
-            throw new NotImplementedException();
+            var deleteEmployee = employees.SingleOrDefault(e => e.EmployeeId == id);
+
+            if (deleteEmployee != null)
+            {
+                employees.Remove(deleteEmployee);
+            }
         }
 
         public Employee GetEmployeeById(int id)
