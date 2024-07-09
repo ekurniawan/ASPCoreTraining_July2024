@@ -8,6 +8,11 @@
         <title>Employee Page</title>
     </head>
 
+    @if(ViewBag.Message != null)
+    {
+        <div style="color:green">@ViewBag.Message</div><br/>
+    }
+
     <a href="/Employees/Add">Tambah Employee</a>
     <body>
         <table border="1">

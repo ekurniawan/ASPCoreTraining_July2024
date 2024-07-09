@@ -14,6 +14,11 @@ namespace ASPCoreTraining.Web.Controllers
 
         public IActionResult Index()
         {
+            if (TempData["Message"] != null)
+            {
+                ViewBag.Message = TempData["Message"];
+            }
+
             var models = _employee.GetEmployees();
             return View(models);
         }
@@ -49,6 +54,15 @@ namespace ASPCoreTraining.Web.Controllers
         {
             var employee = _employee.GetEmployeeById(id);
             return View(employee);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Employee employee)
+        {
+            _employee.UpdateEmployee(employee);
+            TempData["Message"] = "Employee updated successfully";
+
+            return RedirectToAction("Index");
         }
     }
 }
