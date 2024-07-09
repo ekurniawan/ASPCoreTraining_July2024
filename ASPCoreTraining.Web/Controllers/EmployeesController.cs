@@ -44,5 +44,11 @@ namespace ASPCoreTraining.Web.Controllers
             _employee.AddEmployee(employee);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(int id)
+        {
+            var employee = _employee.GetEmployeeById(id);
+            return View(employee);
+        }
     }
 }
