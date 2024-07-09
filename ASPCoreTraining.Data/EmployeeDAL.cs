@@ -88,7 +88,7 @@ namespace ASPCoreTraining.Data
             }
         }
 
-        public Employee GetById(int id)
+        public Employee GetById(string id)
         {
             Employee employee = new Employee();
             using (SqlConnection conn = new SqlConnection(_connectionString))

@@ -26,9 +26,10 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         }
 
         // GET: EmployeesController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+            var result = _employeeDAL.GetById(id);
+            return View(result);
         }
 
         // GET: EmployeesController/Create

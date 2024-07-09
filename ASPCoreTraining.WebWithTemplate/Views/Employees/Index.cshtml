@@ -52,6 +52,7 @@
                                                     @Html.DisplayFor(modelItem => item.Department)
                                                 </td>
                                                 <td>
+                                                    <a asp-action="Details" class="btn btn-primary btn-xs" asp-route-id="@item.EmployeeIdMasking">Detail</a>
                                                     <a asp-action="Edit" class="btn btn-warning btn-xs" asp-route-id="@item.EmployeeIdMasking">Edit</a>
                                                 </td>
                                             </tr>
