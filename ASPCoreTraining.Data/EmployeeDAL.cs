@@ -1,4 +1,5 @@
 ﻿
+using ASPCoreTraining.Data.Interfaces;
 using ASPCoreTraining.Domain;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,19 @@ using System.Threading.Tasks;
 
 namespace ASPCoreTraining.Data
 {
-    public class EmployeeDAL
+    public class EmployeeDAL : IEmployeeDAL
     {
         private string _connectionString = @"Data Source=ACTUAL;Initial Catalog=KangeanDb;Integrated Security=True;TrustServerCertificate=True";
+
+        public Employee Add(Employee entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         public IEnumerable<Employee> GetAll()
         {
@@ -43,6 +54,21 @@ namespace ASPCoreTraining.Data
 
                 return employees;
             }
+        }
+
+        public Employee GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Employee> GetByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Employee Update(Employee entity)
+        {
+            throw new NotImplementedException();
         }
     }
 }
