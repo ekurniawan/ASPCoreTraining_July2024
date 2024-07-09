@@ -16,9 +16,19 @@ namespace ASPCoreTraining.Web.Services
             employees.Add(employee);
         }
 
+        public void DeleteEmployee(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Employee GetEmployeeById(int id)
         {
-            var employee = employees.SingleOrDefault(e => e.EmployeeId == id);
+            //notasi lambda expression
+            //var employee = employees.SingleOrDefault(e => e.EmployeeId == id);
+            var employee = (from e in employees
+                            where e.EmployeeId == id
+                            select e).SingleOrDefault();
+
             if (employee == null)
             {
                 throw new Exception("Employee not found");
@@ -29,6 +39,11 @@ namespace ASPCoreTraining.Web.Services
         public List<Employee> GetEmployees()
         {
             return employees;
+        }
+
+        public void UpdateEmployee(Employee employee)
+        {
+            throw new NotImplementedException();
         }
     }
 }

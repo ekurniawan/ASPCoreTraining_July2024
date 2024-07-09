@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 //cara untuk menginject object
 //builder.Services.AddSingleton<IGreeter, Greeting>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IEmployee, EmployeeService>();
 
 var app = builder.Build();
 
