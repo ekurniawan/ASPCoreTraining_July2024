@@ -43,7 +43,17 @@ namespace ASPCoreTraining.Web.Services
 
         public void UpdateEmployee(Employee employee)
         {
-            throw new NotImplementedException();
+            var updateEmployee = (from e in employees
+                                  where e.EmployeeId == employee.EmployeeId
+                                  select e).FirstOrDefault();
+
+            if (updateEmployee != null)
+            {
+                updateEmployee.FullName = employee.FullName;
+                updateEmployee.Email = employee.Email;
+                updateEmployee.Department = employee.Department;
+                updateEmployee.Address = employee.Address;
+            }
         }
     }
 }

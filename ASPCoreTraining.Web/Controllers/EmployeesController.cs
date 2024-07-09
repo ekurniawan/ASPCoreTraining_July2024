@@ -23,6 +23,20 @@ namespace ASPCoreTraining.Web.Controllers
             return View();
         }
 
+        public IActionResult Details(int id)
+        {
+            try
+            {
+                var result = _employee.GetEmployeeById(id);
+                return View(result);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+            }
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Add(Employee employee)
         {
