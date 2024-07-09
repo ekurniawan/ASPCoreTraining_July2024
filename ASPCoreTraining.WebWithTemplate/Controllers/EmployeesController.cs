@@ -1,4 +1,5 @@
 ﻿using ASPCoreTraining.Data.Interfaces;
+using ASPCoreTraining.Domain;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,11 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         // GET: EmployeesController
         public ActionResult Index()
         {
+            if (TempData["Message"] != null)
+            {
+                ViewBag.Message = TempData["Message"];
+            }
+
             var results = _employeeDAL.GetAll();
             return View(results);
         }
@@ -28,20 +34,30 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         // GET: EmployeesController/Create
         public ActionResult Create()
         {
+            ViewBag.EmployeeIdMasking = Guid.NewGuid().ToString();
             return View();
         }
 
         // POST: EmployeesController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Employee employee)
         {
             try
             {
+                //check model validation
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+
+                var result = _employeeDAL.Add(employee);
+                TempData["Message"] = "<span class='text-success'>Employee added successfully</span>";
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
+                ViewBag.ErrorMessage = ex.Message;
                 return View();
             }
         }

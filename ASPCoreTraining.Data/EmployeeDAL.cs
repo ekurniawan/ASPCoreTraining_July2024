@@ -4,6 +4,7 @@ using ASPCoreTraining.Domain;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -72,10 +73,10 @@ namespace ASPCoreTraining.Data
                     {
                         var employee = new Employee();
                         employee.EmployeeId = Convert.ToInt32(dr["EmployeeId"]);
+                        employee.EmployeeIdMasking = dr["EmployeeIdMasking"].ToString();
                         employee.FullName = dr["FullName"].ToString();
                         employee.Email = dr["Email"].ToString();
                         employee.Department = dr["Department"].ToString();
-
                         employees.Add(employee);
                     }
                 }
@@ -89,7 +90,27 @@ namespace ASPCoreTraining.Data
 
         public Employee GetById(int id)
         {
-            throw new NotImplementedException();
+            Employee employee = new Employee();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string strSql = @"SELECT * FROM Employees WHERE EmployeeIdMasking = @EmployeeIdMasking";
+                using (SqlCommand cmd = new SqlCommand(strSql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@EmployeeIdMasking", id);
+                    conn.Open();
+                    SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                    if (dr.HasRows)
+                    {
+                        dr.Read();
+                        employee.EmployeeId = Convert.ToInt32(dr["EmployeeId"]);
+                        employee.EmployeeIdMasking = dr["EmployeeIdMasking"].ToString();
+                        employee.FullName = dr["FullName"].ToString();
+                        employee.Email = dr["Email"].ToString();
+                        employee.Department = dr["Department"].ToString();
+                    }
+                }
+            }
+            return employee;
         }
 
         public IEnumerable<Employee> GetByName(string name)
