@@ -1,7 +1,13 @@
+using ASPCoreTraining.Data;
+using ASPCoreTraining.Data.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//inject DAL
+builder.Services.AddScoped<IEmployeeDAL, EmployeeDAL>();
 
 var app = builder.Build();
 

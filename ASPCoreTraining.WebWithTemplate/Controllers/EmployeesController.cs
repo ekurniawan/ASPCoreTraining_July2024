@@ -1,14 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ASPCoreTraining.Data.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ASPCoreTraining.WebWithTemplate.Controllers
 {
     public class EmployeesController : Controller
     {
+        private readonly IEmployeeDAL _employeeDAL;
+        public EmployeesController(IEmployeeDAL employeeDAL)
+        {
+            _employeeDAL = employeeDAL;
+        }
+
         // GET: EmployeesController
         public ActionResult Index()
         {
-            return View();
+            var results = _employeeDAL.GetAll();
+            return new JsonResult(results);
         }
 
         // GET: EmployeesController/Details/5
