@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "_LayoutKei";
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Main page content-->
+<div class="container-fluid px-4">
+    <div class="card">
+        <div class="card-header text-teal ">Hi, Adi Priono</div>
+        <div class="card-body">
+
+            <div class="row gx-3 ">
+
+                <!-- Section Header -->
+                <div class="col-md-4 mb-3">
+                    <div class="mb-3">
+                        <div class="card">
+             
+                            <div class="card-body">
+
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="tbCurrentStatus">Ticket Status</label>
+                                    <input class="form-control" id="tbCurrentStatus" type="text" placeholder="Your Ticket Status" value="" readonly="readonly" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="tbCurrentStatus">Requester</label>
+                                    <input class="form-control" id="tbRequester" runat="server" type="text" placeholder="Requester Name" value="" readonly="readonly" />
+                                </div>
+
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="mb-3">
+                        <div class="card">
+
+                            <div class="card-body">
+
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="tbCurrentStatus">Ticket Status</label>
+                                    <input class="form-control" id="tbCurrentStatus" type="text" placeholder="Your Ticket Status" value="" readonly="readonly" />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="tbCurrentStatus">Requester</label>
+                                    <input class="form-control" id="tbRequester" runat="server" type="text" placeholder="Requester Name" value="" readonly="readonly" />
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Section 2 -->
+                <!-- Section 3 -->
+                <!-- Section Button -->
+               @*  <div class="col-md-4 mb-3">
+                    <div class="mb-3">
+                        <!-- Save changes button-->
+
+                    </div>
+                </div> *@
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<!-- Modal -->
+@* <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Static Backdrop Modal</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
+                <button id="btnProcess" runat="server" class="btn btn-primary" type="button">Submit Issue</button>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+
+@*     <div class="col-md-2" style="position: absolute; top: 20%; left: 44%;">
+        <div class="mb-1">
+            <div class="card">
+                <div class="card-header text-purple">
+                    <i class="text-purple" data-feather="coffee"></i><asp:Label ID="Label6" runat="server" Text="&nbsp;Confirmation" Visible="true" CssClass="small"></asp:Label>
+                </div>
+                <div class="card-body" style="text-align:center;">
+                    <label id="lblImage" style="text-align:center ; "></label><br />
+                    <asp:Label ID="lblProcessWord" runat="server" Text="Are you sure to process this issue ?" CssClass="small"></asp:Label>
+                </div>
+                <div class="card-footer">
+                    <button id="btnCancelPrs" runat="server" class="btn btn-danger" type="button" data-bs-dismiss="modal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                    <asp:Button ID="btnNextPrs" runat="server" Text="Process Now" Visible="true" class="btn btn-purple" OnClick="btn_NextPrs" OnClientClick="myButtonDeactive();" UseSubmitBehavior="false" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- Toast content -->
+<div class="toast" style="position: absolute; top: 8%; right: 40%;" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="1000">
+    <div class="toast-header bg-danger text-white">
+        <i class="text-white" data-feather="bell"></i>
+        <strong class="me-auto">Warning</strong>
+        <small class="text-white ml-2">just now</small>
+        <button type="button" class="ml-2 mb-1 btn-close text-white" data-bs-dismiss="toast" aria-label="close"></button>
+    </div>
+    <div class="toast-body">
+        <p><asp:Label ID="lblValidate" runat="server" Text="" CssClass="small"></asp:Label></p>
+    </div>
+</div> *@

@@ -1,0 +1,245 @@
+﻿
+.loading
+{
+    font-family: Arial;
+    font-size: 10pt;
+    color:#ffffff;
+    border: 3px solid red;
+    width: 200px;
+    height: 18px;
+    background-color: red;
+    z-index: 999;
+}
+
+.c-panel-report {
+	background-color:#ffffdd;
+	overflow:auto;
+	padding:8px;
+
+}
+
+.form-textbox
+{
+    font-size:12px;
+    border: 1px;
+    border-color:#000000;
+    outline: 0;
+    height: 25.5px;
+    width:100%;
+    background-color: #ffffff;
+    color: #666;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box; 
+    text-align:center;
+}
+
+.form-dropdown
+{
+    font-size:12px;
+    border: 1;
+    outline: 0;
+    height: 30px;
+    width:100%;
+    height: 29.5px;
+    background-color: #ffffff;
+    color: #666;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box; 
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.form-submit
+{
+    font-size:12px;
+    border: 0.5;
+    outline: 0;
+    height: 30px;
+    width:100%;
+    background-color: #f2f2f2;
+    color: #666;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box; 
+    box-sizing:border-box;
+    text-align:center;
+}
+
+.s-list-title-blue-plain
+{
+    border: thin solid #C0C0C0;
+    font-family: @myFirstFont;
+    font-size: 14px;
+    background-color: #0066CC;
+    font-weight: bold;
+    color: White;
+}
+
+.s-list-title-blue-screen
+{
+    border: 1px solid grey;
+    font-family: @myFirstFont;
+    font-size: 18px;
+    background-color: #0066CC;
+    font-weight: bold;
+    color: White;
+}
+
+.s-list-detail-Title
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    border: 1px solid grey;
+    background-color: White;
+    font-weight: bold;
+}
+
+.s-list-detail-value
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    border: 1px solid grey;
+    background-color: White;
+}
+
+
+.s-list-title-green
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    background-color: Green;
+    font-weight: bold;
+}
+
+.s-list-title-green-screen
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    border: 1px solid Green;
+    background-color: Green;
+    font-weight: bold;
+    color: White;
+}
+
+.s-list-title-green-plain
+{
+    border: thin solid #C0C0C0;
+    font-family: @myFirstFont;
+    font-size: 14px;
+    background-color: Green;
+    font-weight: bold;
+    color: White;
+}
+
+
+.s-title-header
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.s-alert-yellow
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    color: Green;
+    border: 1px solid grey;
+    background-color: Yellow;
+    font-weight: bold;
+}
+
+.s-alert-red
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    color: White;
+    border: 1px solid grey;
+    background-color: Red;
+    font-weight: bold;
+}
+
+.s-list-supply
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    border: 1px solid grey;
+    background-color: #EAF8FF;
+}
+
+.s-ledger-info
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    border: none;
+    text-align: left;
+}
+
+.s-list-demand
+{
+    font-family: @myFirstFont;
+    font-size: 18px;
+    border: 1px solid grey;
+    background-color: #ECFFEC;
+}
+
+.s-note-yes
+{
+    font-family: @myFirstFont;
+    font-size: 16px;
+    border: 1px solid green;
+    background-color: White;
+}
+
+.s-note-no
+{
+    border: 0px;
+    background-color: transparent;
+}
+
+@font-face
+{
+    font-family: myFirstFont;
+    src: url('Styles/font/BasicLig_ltd.ttf');
+}
+
+.tooltip
+{
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    visibility: visible;
+    margin-left: 8px;
+}
+
+.tooltip .tooltiptext
+{
+    visibility: hidden;
+    width: 180px;
+    background-color: RED;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 0;
+    position: absolute;
+    z-index: 1;
+    top: -35px;
+    left: 110%;
+    visibility: visible;
+}
+
+.tooltip .tooltiptext::after
+{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent red transparent transparent;
+    visibility: visible;
+}
+.tooltip:hover .tooltiptext
+{
+    visibility: visible;
+}

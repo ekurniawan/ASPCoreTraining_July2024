@@ -1,0 +1,391 @@
+﻿#c-action
+{
+    background:#ffffaa;
+    border:1px solid #99BBE8;
+    clear:right;
+    float:right;
+    margin:4px 0px 4px 0px;
+    padding:4px;
+}
+
+.c-modal-background {
+	background-color:Black;
+	filter:alpha(opacity=10);
+	opacity:0.1;	 
+    top:31110px;
+    left:300px;
+
+}
+
+.c-panel-report {
+	background-color:#ffffdd;
+	overflow:auto;
+	padding:8px;
+
+}
+
+.s-list-title-maroon-screen
+{
+    border: 1px solid grey;
+    font-family: @myFirstFont;
+    font-size: 18px;
+    background-color: #c95c55;
+    font-weight: bold;
+    color: White;
+}
+
+.c-button
+{
+    font-family:Tahoma;
+    font-size:11px;
+    padding:2px;
+}
+
+
+.c-default
+{
+    margin:auto;
+    width:1000px;
+}
+
+.c-default td
+{
+    background:#ffffff;
+    border:0px solid #cccccc;
+    font-size:13px;
+
+}
+
+.c-default-list
+{
+    margin:auto;
+    width:1000px;
+}
+
+#c-detail
+{
+    background:#ffffff;
+    border:1px solid #99BBE8;
+    overflow:auto;
+}
+
+#c-detail-content, #c-main-content, #c-summary-content
+{   
+    overflow-x:hidden;
+    overflow:auto;
+}
+
+.c-detail-table td
+{
+    background:#eeeeee;
+}
+
+.c-detail-update
+{
+    padding:8px;
+}
+
+.c-document-content
+{
+    margin:0px 8px 8px 8px;
+}
+
+.c-employee
+{
+    margin:3px 0px 3px 0px;
+}
+
+#c-insert
+{
+	background:#ffcc80;
+	color:#15428B;
+    font-size:14px;
+    font-weight:bold;
+    height:100%;
+    overflow:auto;
+    padding:8px;
+}
+
+.c-insert
+{
+    border:1px solid #dddddd;
+    margin-left:8px;
+}
+
+.c-insert td
+{
+    background:#eeeeee;
+}
+
+.c-list-title
+{    
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    padding: 4px 3px 4px 3px;
+    background-image: url('Images/bg_Title_box.png');
+    background-repeat: repeat-x;    
+    font-weight: bold;
+}
+
+.c-list-title-blue-plain
+{
+    border: thin solid #C0C0C0;
+    font-family: Arial Narrow;
+    font-size: 14px;
+    background-color: #0066CC;
+    font-weight: bold;
+    color: White;
+}
+
+.c-list-detail-Title
+{    
+    font-family: Tahoma; 
+    font-size: 14px;
+    border: 1px solid grey;
+    background-color: White;   
+    font-weight: bold;
+}
+
+.c-list-detail-value
+{    
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    border: 1px solid grey;
+    background-color: White;       
+}
+
+
+.c-list-title-green
+{    
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    padding: 4px 3px 4px 3px;
+    background-image: url('Images/bg_Title_box2.png');
+    background-repeat: repeat-x;    
+    font-weight: bold;
+}
+
+.c-list-title-green-plain
+{
+    border: thin solid #C0C0C0;
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    background-color: Green;
+    font-weight: bold;
+    color: White;
+}
+
+.c-loading
+{
+    background:#ffffff;
+    border:2px solid #ff9900;
+    left:45%;
+    padding:16px;
+    position:absolute;
+    text-align:center;
+    top:35%;
+}
+
+.c-main
+{
+    background:#ffffff;
+    border:1px solid #99BBE8;
+    overflow:auto;
+}
+
+#c-main-content
+{
+    padding:0px;
+}
+
+.c-main-title, .c-summary-title, .c-detail-title
+{
+    background:url(Images/background_title_page.gif) repeat-x center;
+    border-bottom:1px solid #99BBE8;
+    color:#15428B;
+    font-weight:bold;
+    clear:both;
+    margin:0;
+    padding:4px 4px 4px 8px;
+}
+
+.c-menu
+{
+    background:url(Images/background_menu_content.gif) bottom repeat-x;
+    border:1px solid #99BBE8;
+    clear:both;
+    overflow:hidden;
+    padding:2px 2px 2px 4px;
+}
+
+.c-paging
+{
+    background:url(Images/background_pagination.gif) repeat-x;
+    border-top:1px solid #99BBE8;
+    padding:4px 4px 2px 4px;
+}
+
+.c-paging-button
+{
+    margin-top:2px;
+    padding:0;
+}
+
+.c-paging-button:hover
+{
+    background:url(Images/background_button_hover.gif) no-repeat;
+}
+
+.c-panel-search {
+	background-color:#ffffdd;
+	border-width:1px;
+	border-style:solid;
+	border-color:Gray;
+	overflow:auto;
+	padding:8px;
+	width:480px;
+}
+
+.c-report
+{
+    border:1px solid #99BBE8;
+}
+
+.c-save
+{
+    margin:4px;
+}
+
+.c-search-title
+{
+    border-bottom:1px solid #cccccc;
+    font-size:11px;
+    font-weight:bold;
+    margin-bottom:4px;
+    padding-bottom:4px;
+}
+
+.c-status
+{
+    margin:1px 0px 3px 0px;
+}
+
+.c-summary
+{
+    background:#ffffff;
+    border:1px solid #99BBE8;
+    margin-right:4px;
+    overflow:hidden;
+    width:360px;
+}
+
+#c-summary-content
+{
+    overflow-x:hidden;
+    overflow:auto;
+}
+
+#c-summary-content a
+{
+    border-bottom:1px solid #C5DAF6;
+    cursor:default;
+    display:block;
+    line-height:16px;
+    padding:8px;
+}
+
+#c-summary-content a:hover
+{
+    background:#ffffaa;
+    display:block;
+    color:#000000;
+}
+
+.c-summary-search
+{
+    background:#C5DAF6;
+    border-bottom:1px solid #99BBE8;
+    padding:4px;
+}
+
+.c-history-content
+{
+    border:1px solid #C5DAF6;
+    overflow:auto;
+    color:White;
+    
+}
+
+.c-content-box
+{
+    border:1px solid #C5DAF6;
+    border-collapse:collapse; 
+    overflow:auto;
+    color:black;
+}
+
+.graph-1
+{
+    width:100%;
+    display:block;
+    overflow-x:scroll;
+}
+
+.div-main
+{
+    width:100%; 
+    padding:5px;      
+}
+
+.c-alert-yellow
+{    
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    color: Green; 
+    border: 1px solid grey;
+    background-color: Yellow;   
+    font-weight: bold;
+}
+
+.c-alert-red
+{    
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    color: White; 
+    border: 1px solid grey;
+    background-color: Red;   
+    font-weight: bold;
+}
+
+.c-list-supply
+{    
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    border: 1px solid grey;
+    background-color: #EAF8FF;       
+}
+
+.c-list-demand
+{    
+    font-family: Arial Narrow; 
+    font-size: 14px;
+    border: 1px solid grey;
+    background-color: #ECFFEC;       
+}
+
+.c-note-yes
+{
+    border: 1px solid green;
+    background-color: White; 
+}
+
+.c-note-no
+{
+    border: 0px ;
+    background-color:transparent;  
+}
+
+@font-face{
+    font-family: myFirstFont;
+    src: url('Styles/font/BasicLig_ltd.ttf');    
+}

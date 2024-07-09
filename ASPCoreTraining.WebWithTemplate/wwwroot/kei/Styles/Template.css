@@ -1,0 +1,138 @@
+﻿a
+{
+    color:#000000;
+    text-decoration:none;    
+}
+
+a:hover
+{
+    color:#3399ff;
+}
+
+body
+{
+    background:#eeeeee;
+    margin:0;
+    padding:0;
+}
+
+.c-panel-report {
+	background-color:#ffffdd;
+	overflow:auto;
+	padding:8px;
+
+}
+
+.border
+{
+    border:1px solid #3178D6;
+}
+
+.button
+{
+    padding-top:2px;
+}
+
+div, td
+{
+    font-family:Tahoma;
+    font-size:11px;
+}
+
+input
+{
+    font-family:Tahoma;
+    font-size:11px;
+    padding:2px;
+}
+
+.button
+{
+    height:24px;
+}
+
+.separator-4
+{
+    clear:both;
+    height:8px;
+    overflow:hidden;
+}
+.separator-8
+{
+    clear:both;
+    height:8px;
+    overflow:hidden;
+}
+
+.t-content
+{
+    clear:both;
+    padding:2px 4px 4px 4px;
+}
+
+.t-footer
+{
+    background:url(Images/bg_footer.gif) #eeeeee repeat-x;
+    clear:both;
+    height:28px;
+    overflow:hidden;
+    vertical-align:bottom;  
+}
+
+.t-footer-about
+{
+    float:right;
+    margin:8px 8px 0px 0px;
+}
+
+.t-footer-copyright
+{
+    float:left;
+    margin:8px 0px 0px 8px;
+}
+
+.t-header
+{
+    background:url(Images/bg_header.gif) #eeeeee repeat-x;
+    height:48px;
+    border-bottom:1px solid #d9d9d9;
+}
+
+.t-header-logo
+{
+    display:block;    
+    font-size:0;
+    float:left;
+    margin:7px 0px 0px 7px;
+    text-decoration:none;     
+}
+
+.t-main-header-logo
+{
+    display:block;    
+    font-size:0;
+}
+
+.t-header-menu
+{
+    padding-top:13px;
+}
+
+.t-header-title
+{
+    float:left;
+    font-family:Trebuchet MS;
+    font-size:20px;
+    margin:10px 0px 0px 4px;
+    width:120px;
+}
+
+.t-menu-content
+{
+    margin-left:2px;
+}
+
+.warning
+{
+    color:#ff9900;
+}
