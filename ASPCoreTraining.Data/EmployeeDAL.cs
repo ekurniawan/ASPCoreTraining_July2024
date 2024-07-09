@@ -120,7 +120,30 @@ namespace ASPCoreTraining.Data
 
         public Employee Update(Employee entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string strSql = @"UPDATE Employees SET FullName = @FullName, Email = @Email, Department = @Department 
+                                WHERE EmployeeIdMasking = @EmployeeIdMasking";
+                using (SqlCommand cmd = new SqlCommand(strSql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@EmployeeIdMasking", entity.EmployeeIdMasking);
+                    cmd.Parameters.AddWithValue("@FullName", entity.FullName);
+                    cmd.Parameters.AddWithValue("@Email", entity.Email);
+                    cmd.Parameters.AddWithValue("@Department", entity.Department);
+
+                    conn.Open();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        return entity;
+                    }
+                    catch (SqlException sqlEx)
+                    {
+                        throw new ArgumentException($"Number: {sqlEx.Number} Error: {sqlEx.Message}");
+                    }
+                }
+            }
+
         }
     }
 }

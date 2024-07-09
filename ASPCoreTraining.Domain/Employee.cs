@@ -11,8 +11,7 @@ namespace ASPCoreTraining.Domain
     {
         public int EmployeeId { get; set; }
 
-        [Required]
-        public string EmployeeIdMasking { get; set; } = null!;
+        public string? EmployeeIdMasking { get; set; }
 
         [Required]
         public string FullName { get; set; } = null!;

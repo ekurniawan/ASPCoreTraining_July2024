@@ -64,23 +64,35 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         }
 
         // GET: EmployeesController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View();
+            var editEmployee = _employeeDAL.GetById(id);
+            return View(editEmployee);
         }
 
         // POST: EmployeesController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult EditPost(Employee employee)
         {
             try
             {
+                //check model validation
+                if (!ModelState.IsValid)
+                {
+                    return View("Edit");
+                }
+
+                var result = _employeeDAL.Update(employee);
+
+                TempData["Message"] = "<span class='text-success'>Employee updated successfully</span>";
+
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ViewBag.ErrorMessage = ex.Message;
+                return View("Edit");
             }
         }
 
