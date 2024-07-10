@@ -10,5 +10,6 @@ namespace ASPCoreTraining.Data.Interfaces
     public interface IEmployeeDAL : ICrud<Employee>
     {
         IEnumerable<Employee> GetByName(string name);
+        IEnumerable<Employee> GetByDepartmentId(int departmentId);
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 using ASPCoreTraining.Data.Interfaces;
 using ASPCoreTraining.Domain;
+using Dapper;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -104,6 +105,17 @@ namespace ASPCoreTraining.Data
                 conn.Close();
 
                 return employees;
+            }
+        }
+
+        public IEnumerable<Employee> GetByDepartmentId(int departmentId)
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string strSql = @"SELECT * FROM Employees WHERE DepartmentId = @DepartmentId";
+                var param = new { DepartmentId = departmentId };
+                var results = conn.Query<Employee>(strSql, param);
+                return results;
             }
         }
 

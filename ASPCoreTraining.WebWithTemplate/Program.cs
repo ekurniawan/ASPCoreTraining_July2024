@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 //inject DAL
+builder.Services.AddScoped<IDepartmentDAL, DepartmentDAL>();
 builder.Services.AddScoped<IEmployeeDAL, EmployeeDAL>();
 
 var app = builder.Build();

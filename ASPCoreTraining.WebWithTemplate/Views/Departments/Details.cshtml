@@ -1,0 +1,99 @@
+﻿@model ASPCoreTraining.WebWithTemplate.ViewModels.ViewDepartmentWithEmployee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container-fluid px-4">
+    <div class="card">
+        <div class="card-header text-teal ">Detail Departments</div>
+        <div class="card-body">
+
+            <div class="row gx-3 ">
+
+                <!-- Section Header -->
+                <div class="col-md-12 mb-3">
+                    <div class="mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-4">
+                                        Department ID :
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Model.Department.DepartmentId
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        Department Name :
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Model.Department.DepartmentName
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <div class="mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Employee ID
+                                            </th>
+                                            <th>
+                                                Full Name
+                                            </th>
+                                            <th>
+                                                Email
+                                            </th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Employees)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EmployeeId)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.FullName)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Email)
+                                                </td>
+                                                <td>
+                                                    <a asp-action="Edit" class="btn btn-warning btn-xs" asp-route-id="@item.EmployeeIdMasking">Edit</a> &nbsp;
+                                                    <a asp-action="Delete" class="btn btn-danger btn-xs" asp-route-id="@item.EmployeeIdMasking">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2 -->
+                <!-- Section 3 -->
+                <!-- Section Button -->
+                @*  <div class="col-md-4 mb-3">
+                <div class="mb-3">
+                <!-- Save changes button-->
+
+                </div>
+                </div> *@
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
