@@ -11,6 +11,8 @@ namespace ASPCoreTraining.Domain
     {
         public int EmployeeId { get; set; }
 
+        public int DepartmentId { get; set; }
+
         public string? EmployeeIdMasking { get; set; }
 
         [Required]
@@ -19,8 +21,5 @@ namespace ASPCoreTraining.Domain
         [Required]
         [EmailAddress]
         public string Email { get; set; } = null!;
-
-        [Required]
-        public string Department { get; set; } = null!;
     }
 }
