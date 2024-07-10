@@ -6,7 +6,7 @@
 
 <div class="container-fluid px-4">
     <div class="card">
-        <div class="card-header text-teal ">@ViewBag.Message</div>
+        <div class="card-header text-teal ">@Html.Raw(@ViewBag.Message)</div>
         <div class="card-body">
 
             <div class="row gx-3 ">
@@ -32,7 +32,7 @@
                                             <th>
                                                 @Html.DisplayNameFor(model => model.Department)
                                             </th>
-                                            <th></th>
+                                            <th>&nbsp;</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -52,8 +52,9 @@
                                                     @Html.DisplayFor(modelItem => item.Department)
                                                 </td>
                                                 <td>
-                                                    <a asp-action="Details" class="btn btn-primary btn-xs" asp-route-id="@item.EmployeeIdMasking">Detail</a>
-                                                    <a asp-action="Edit" class="btn btn-warning btn-xs" asp-route-id="@item.EmployeeIdMasking">Edit</a>
+                                                    <a asp-action="Details" class="btn btn-primary btn-xs" asp-route-id="@item.EmployeeIdMasking">Detail</a> &nbsp; 
+                                                    <a asp-action="Edit" class="btn btn-warning btn-xs" asp-route-id="@item.EmployeeIdMasking">Edit</a> &nbsp;
+                                                    <a asp-action="Delete" class="btn btn-danger btn-xs" asp-route-id="@item.EmployeeIdMasking">Delete</a>
                                                 </td>
                                             </tr>
                                         }

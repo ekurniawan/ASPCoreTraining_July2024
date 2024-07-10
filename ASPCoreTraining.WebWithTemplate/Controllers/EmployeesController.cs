@@ -97,22 +97,27 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         }
 
         // GET: EmployeesController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            var deleteEmployee = _employeeDAL.GetById(id);
+            return View(deleteEmployee);
         }
 
         // POST: EmployeesController/Delete/5
         [HttpPost]
+        [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult DeletePost(string id)
         {
             try
             {
+                _employeeDAL.Delete(id);
+                TempData["Message"] = $"<span class='text-danger'>Employee deleted successfully</span>";
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
+                ViewBag.ErrorMessage = "Error deleting employee";
                 return View();
             }
         }

@@ -53,9 +53,26 @@ namespace ASPCoreTraining.Data
             }
         }
 
-        public void Delete(int id)
+        public void Delete(string id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                string strSql = @"DELETE FROM Employees 
+                                WHERE EmployeeIdMasking = @EmployeeIdMasking";
+                using (SqlCommand cmd = new SqlCommand(strSql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@EmployeeIdMasking", id);
+                    conn.Open();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SqlException sqlEx)
+                    {
+                        throw new ArgumentException($"Number: {sqlEx.Number} Error: {sqlEx.Message}");
+                    }
+                }
+            }
         }
 
         public IEnumerable<Employee> GetAll()
