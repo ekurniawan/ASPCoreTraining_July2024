@@ -149,6 +149,17 @@ namespace ASPCoreTraining.Data
             throw new NotImplementedException();
         }
 
+        public IEnumerable<ViewEmployeeWithDepartment> GetEmployeeWithDepartments()
+        {
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                var strSql = @"select * from ViewEmployeeWithDepartment 
+                             order by FullName asc";
+                var results = conn.Query<ViewEmployeeWithDepartment>(strSql);
+                return results;
+            }
+        }
+
         public Employee Update(Employee entity)
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))

@@ -25,6 +25,12 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
             return View(results);
         }
 
+        public ActionResult WithDepartment()
+        {
+            var results = _employeeDAL.GetEmployeeWithDepartments();
+            return View(results);
+        }
+
         // GET: EmployeesController/Details/5
         public ActionResult Details(string id)
         {

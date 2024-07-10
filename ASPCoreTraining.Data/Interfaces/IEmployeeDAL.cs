@@ -11,5 +11,6 @@ namespace ASPCoreTraining.Data.Interfaces
     {
         IEnumerable<Employee> GetByName(string name);
         IEnumerable<Employee> GetByDepartmentId(int departmentId);
+        IEnumerable<ViewEmployeeWithDepartment> GetEmployeeWithDepartments();
     }
 }
