@@ -26,21 +26,39 @@ namespace ASPCoreTraining.API.Controllers
 
         // GET api/<DepartmentsController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Department Get(string id)
         {
-            return "value";
+            var department = _departmentEF.GetById(id);
+            return department;
+        }
+
+        [HttpGet("ByName")]
+        public IEnumerable<Department> GetByName(string name)
+        {
+            var departments = _departmentEF.GetByName(name);
+            return departments;
         }
 
         // POST api/<DepartmentsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult Post([FromBody] Department department)
         {
+            try
+            {
+                var result = _departmentEF.Add(department);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT api/<DepartmentsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Department department)
         {
+
         }
 
         // DELETE api/<DepartmentsController>/5

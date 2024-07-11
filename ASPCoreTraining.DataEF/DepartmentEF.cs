@@ -71,7 +71,7 @@ namespace ASPCoreTraining.DataEF
 
         public IEnumerable<Department> GetByName(string name)
         {
-            var results = _db.Departments.Where(d => d.DepartmentName.Contains(name)).OrderBy(d => d.DepartmentName);
+            var results = _db.Departments.Where(d => d.DepartmentName.ToLower().Contains(name.ToLower())).OrderBy(d => d.DepartmentName);
             return results;
         }
 
