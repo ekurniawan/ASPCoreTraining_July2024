@@ -38,6 +38,7 @@ namespace ASPCoreTraining.DataEF
             {
                 var deleteDepartment = GetById(id);
                 _db.Departments.Remove(deleteDepartment);
+                _db.SaveChanges();
             }
             catch (Exception ex)
             {

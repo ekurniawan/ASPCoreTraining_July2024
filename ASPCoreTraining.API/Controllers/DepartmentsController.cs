@@ -56,15 +56,34 @@ namespace ASPCoreTraining.API.Controllers
 
         // PUT api/<DepartmentsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Department department)
+        public ActionResult Put(string id, [FromBody] Department department)
         {
-
+            try
+            {
+                var updateDepartment = _departmentEF.GetById(id);
+                updateDepartment.DepartmentName = department.DepartmentName;
+                var result = _departmentEF.Update(updateDepartment);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // DELETE api/<DepartmentsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult Delete(string id)
         {
+            try
+            {
+                _departmentEF.Delete(id);
+                return Ok("Data berhasil didelete !");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
