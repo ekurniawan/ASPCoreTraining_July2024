@@ -15,6 +15,7 @@ builder.Services.AddScoped<IEmployeeDAL, EmployeeDAL>();
 
 //inject EF
 builder.Services.AddScoped<IDepartmentEF, DepartmentEF>();
+builder.Services.AddScoped<IEmployeeEF, EmployeeEF>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

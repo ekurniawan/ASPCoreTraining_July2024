@@ -1,0 +1,100 @@
+﻿@model ASPCoreTraining.WebWithTemplate.ViewModels.EmployeeWithBenefitViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container-fluid px-4">
+    <div class="card">
+        <div class="card-header text-teal ">Employee with Benefits</div>
+        <div class="card-body">
+
+            <div class="row gx-3 ">
+
+                <!-- Section Header -->
+                <div class="col-md-12 mb-3">
+                    <div class="mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-2">
+                                        Employee Name :
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                       @Model.Employee.FullName
+                                    </dd>
+                                    <dt class="col-sm-2">
+                                        Email :
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Model.Employee.Email
+                                    </dd>
+                                </dl>
+                                <hr />
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Benefit
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.EmpBenefits)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.BenefitName
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <hr/>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Department ID
+                                            </th>
+                                            <th>
+                                                Department Name
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.Departments)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.DepartmentId
+                                                </td>
+                                                <td>
+                                                    @item.DepartmentName
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Section 2 -->
+                <!-- Section 3 -->
+                <!-- Section Button -->
+                @*  <div class="col-md-4 mb-3">
+                <div class="mb-3">
+                <!-- Save changes button-->
+
+                </div>
+                </div> *@
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
