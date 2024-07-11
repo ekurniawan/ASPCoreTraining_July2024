@@ -37,7 +37,7 @@ namespace ASPCoreTraining.DataEF
             try
             {
                 var deleteDepartment = GetById(id);
-                _db.Departments.Remove(deleteDepartment)
+                _db.Departments.Remove(deleteDepartment);
             }
             catch (Exception ex)
             {
@@ -47,10 +47,8 @@ namespace ASPCoreTraining.DataEF
 
         public IEnumerable<Department> GetAll()
         {
-
             //raw sql
-            var results = _db.Departments.FromSqlRaw("SELECT * FROM Departments").ToList();
-
+            var results = _db.Departments.FromSqlRaw("SP_GetAllDepartments").ToList();
             //var results = _db.Departments.OrderBy(d => d.DepartmentName);
             /*var results = from d in _db.Departments
                           select d;*/

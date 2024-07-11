@@ -16,7 +16,7 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         public ActionResult Index()
         {
             var departments = _departmentEF.GetAll();
-            return new JsonResult(departments);
+            return View(departments);
         }
 
         // GET: DepartmentsEFController/Details/5

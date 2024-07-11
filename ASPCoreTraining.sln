@@ -11,9 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreTraining.Domain", "A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreTraining.Data", "ASPCoreTraining.Data\ASPCoreTraining.Data.csproj", "{D3248958-9594-45DB-902F-B14A377DEC63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPCoreTraining.DomainEF", "ASPCoreTraining.DomainEF\ASPCoreTraining.DomainEF.csproj", "{815CAA87-73B1-4BEF-8059-048D2F0E9C19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreTraining.DomainEF", "ASPCoreTraining.DomainEF\ASPCoreTraining.DomainEF.csproj", "{815CAA87-73B1-4BEF-8059-048D2F0E9C19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPCoreTraining.DataEF", "ASPCoreTraining.DataEF\ASPCoreTraining.DataEF.csproj", "{9AEA866A-8AF7-48D7-BD87-08AEEDEEA0A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreTraining.DataEF", "ASPCoreTraining.DataEF\ASPCoreTraining.DataEF.csproj", "{9AEA866A-8AF7-48D7-BD87-08AEEDEEA0A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPCoreTraining.API", "ASPCoreTraining.API\ASPCoreTraining.API.csproj", "{9EC9031F-BDAD-4B53-8826-764941A46640}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{9AEA866A-8AF7-48D7-BD87-08AEEDEEA0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AEA866A-8AF7-48D7-BD87-08AEEDEEA0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AEA866A-8AF7-48D7-BD87-08AEEDEEA0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EC9031F-BDAD-4B53-8826-764941A46640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EC9031F-BDAD-4B53-8826-764941A46640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EC9031F-BDAD-4B53-8826-764941A46640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EC9031F-BDAD-4B53-8826-764941A46640}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
