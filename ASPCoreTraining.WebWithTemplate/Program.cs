@@ -1,5 +1,8 @@
 using ASPCoreTraining.Data;
 using ASPCoreTraining.Data.Interfaces;
+using ASPCoreTraining.DataEF;
+using ASPCoreTraining.DataEF.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +12,14 @@ builder.Services.AddControllersWithViews();
 //inject DAL
 builder.Services.AddScoped<IDepartmentDAL, DepartmentDAL>();
 builder.Services.AddScoped<IEmployeeDAL, EmployeeDAL>();
+
+//inject EF
+builder.Services.AddScoped<IDepartmentEF, DepartmentEF>();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 var app = builder.Build();
 
