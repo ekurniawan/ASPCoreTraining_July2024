@@ -1,0 +1,60 @@
+﻿@model ASPCoreTraining.DomainEF.Department
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container-fluid px-4">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="row gx-3 ">
+
+                <!-- Section Header -->
+                <div class="col-md-12 mb-3">
+                    <div class="mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <form asp-action="Create">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="mb-3">
+                                        <label asp-for="DepartmentName" class="control-label"></label>
+                                        <input asp-for="DepartmentName" class="form-control" />
+                                        <span asp-validation-for="DepartmentName" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="submit" value="Create" class="btn btn-primary btn-sm" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-success btn-xs" asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+
+
+                <!-- Section 2 -->
+                <!-- Section 3 -->
+                <!-- Section Button -->
+                @*  <div class="col-md-4 mb-3">
+                <div class="mb-3">
+                <!-- Save changes button-->
+
+                </div>
+                </div> *@
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

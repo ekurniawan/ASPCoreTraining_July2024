@@ -1,4 +1,5 @@
 ﻿using ASPCoreTraining.DataEF.Interfaces;
+using ASPCoreTraining.DomainEF;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,10 +34,17 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         // POST: DepartmentsEFController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Department department)
         {
             try
             {
+                //check validation
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var result = _departmentEF.Add(department);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -58,6 +66,7 @@ namespace ASPCoreTraining.WebWithTemplate.Controllers
         {
             try
             {
+
                 return RedirectToAction(nameof(Index));
             }
             catch

@@ -65,7 +65,7 @@ namespace ASPCoreTraining.DataEF
         {
             var results = _db.BenefitEmployees
                 .Include(be => be.Benefit)
-                .Include(be => be.Employee)
+                .Include(be => be.Employee).ThenInclude(e => e.Department)
                 .Where(be => be.Employee.EmployeeIdMasking == id);
             return results;
         }
