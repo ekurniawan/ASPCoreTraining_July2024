@@ -18,6 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddScoped<IDepartmentEF, DepartmentEF>();
+builder.Services.AddScoped<IEmployeeEF, EmployeeEF>();
 
 var app = builder.Build();
 

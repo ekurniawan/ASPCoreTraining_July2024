@@ -24,6 +24,8 @@ namespace ASPCoreTraining.API.Controllers
             return departments;
         }
 
+
+
         // GET api/<DepartmentsController>/5
         [HttpGet("{id}")]
         public Department Get(string id)
