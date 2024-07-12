@@ -1,4 +1,5 @@
-﻿using ASPCoreTraining.DataEF.Interfaces;
+﻿using ASPCoreTraining.API.DTOs;
+using ASPCoreTraining.DataEF.Interfaces;
 using ASPCoreTraining.DomainEF;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,10 +19,17 @@ namespace ASPCoreTraining.API.Controllers
 
         // GET: api/<DepartmentsController>
         [HttpGet]
-        public IEnumerable<Department> Get()
+        public IEnumerable<DepartmentDTO> Get()
         {
+            List<DepartmentDTO> departmentDTOs = new List<DepartmentDTO>();
             var departments = _departmentEF.GetAll();
-            return departments;
+            departmentDTOs = departments.Select(x => new DepartmentDTO
+            {
+                DepartmentId = x.DepartmentId,
+                DepartmentName = x.DepartmentName
+            }).ToList();
+
+            return departmentDTOs;
         }
 
 

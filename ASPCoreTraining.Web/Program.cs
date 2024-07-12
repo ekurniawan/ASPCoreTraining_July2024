@@ -8,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IEmployee, EmployeeService>();
 
+//add httpclient
+builder.Services.AddHttpClient();
+
+builder.Services.AddScoped<IDepartment, DepartmentServices>();
+
 var app = builder.Build();
 
 //app.UseHttpsRedirection();
